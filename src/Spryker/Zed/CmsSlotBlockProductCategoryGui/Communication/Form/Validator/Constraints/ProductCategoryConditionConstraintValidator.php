@@ -7,28 +7,27 @@
 
 namespace Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Form\Validator\Constraints;
 
+use Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Form\ProductCategorySlotBlockConditionForm;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
-class ProductCategoryConditionsConstraintValidator extends ConstraintValidator
+class ProductCategoryConditionConstraintValidator extends ConstraintValidator
 {
-    protected const CONDITION_KEY_ALL = 'all';
-    protected const CONDITION_KEY_PRODUCT_IDS = 'productIds';
-    protected const CONDITION_KEY_CATEGORY_IDS = 'categoryIds';
-
     /**
      * @param mixed $value
-     * @param \Symfony\Component\Validator\Constraint $constraint
+     * @param \Symfony\Component\Validator\Constraint|\Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Form\Validator\Constraints\ProductCategoryConditionConstraint $constraint
      *
      * @return void
      */
     public function validate($value, Constraint $constraint): void
     {
-        if ($value[static::CONDITION_KEY_ALL]) {
+        if ($value[ProductCategorySlotBlockConditionForm::FIELD_ALL]) {
             return;
         }
 
-        if (!$value[static::CONDITION_KEY_PRODUCT_IDS] && !$value[static::CONDITION_KEY_CATEGORY_IDS]) {
+        if (!$value[ProductCategorySlotBlockConditionForm::FIELD_PRODUCT_IDS] &&
+            !$value[ProductCategorySlotBlockConditionForm::FIELD_CATEGORY_IDS]
+        ) {
             $this->context->buildViolation($constraint->getMessage())
                 ->addViolation();
         }
