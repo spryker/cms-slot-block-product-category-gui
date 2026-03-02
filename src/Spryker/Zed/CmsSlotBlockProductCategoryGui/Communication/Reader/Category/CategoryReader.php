@@ -22,10 +22,6 @@ class CategoryReader implements CategoryReaderInterface
      */
     protected $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToCategoryFacadeInterface $categoryFacade
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToLocaleFacadeInterface $localeFacade
-     */
     public function __construct(
         CmsSlotBlockProductCategoryGuiToCategoryFacadeInterface $categoryFacade,
         CmsSlotBlockProductCategoryGuiToLocaleFacadeInterface $localeFacade

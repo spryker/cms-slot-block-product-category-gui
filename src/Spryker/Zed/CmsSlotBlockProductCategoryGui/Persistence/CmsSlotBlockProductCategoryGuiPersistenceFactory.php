@@ -17,25 +17,16 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CmsSlotBlockProductCategoryGuiPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Persistence\CmsSlotBlockProductCategoryGuiMapper
-     */
     public function createCmsSlotBlockProductCategoryGuiMapper(): CmsSlotBlockProductCategoryGuiMapper
     {
         return new CmsSlotBlockProductCategoryGuiMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\QueryContainer\CmsSlotBlockProductCategoryGuiToProductQueryContainerInterface
-     */
     public function getProductQueryContainer(): CmsSlotBlockProductCategoryGuiToProductQueryContainerInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::QUERY_CONTAINER_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): CmsSlotBlockProductCategoryGuiToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::FACADE_LOCALE);

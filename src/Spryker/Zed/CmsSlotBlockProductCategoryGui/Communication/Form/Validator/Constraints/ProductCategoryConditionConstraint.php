@@ -16,17 +16,11 @@ class ProductCategoryConditionConstraint extends Constraint
      */
     protected const ERROR_MESSAGE = 'At least one product or category should be specified.';
 
-    /**
-     * @return string
-     */
     public function getTargets(): string
     {
         return static::CLASS_CONSTRAINT;
     }
 
-    /**
-     * @return string
-     */
     public function getMessage(): string
     {
         return static::ERROR_MESSAGE;

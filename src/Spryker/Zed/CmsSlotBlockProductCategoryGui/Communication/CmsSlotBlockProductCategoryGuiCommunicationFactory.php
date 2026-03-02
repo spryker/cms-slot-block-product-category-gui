@@ -30,25 +30,16 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
  */
 class CmsSlotBlockProductCategoryGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Form\ProductCategorySlotBlockConditionForm
-     */
     public function createProductCategorySlotBlockConditionForm(): ProductCategorySlotBlockConditionForm
     {
         return new ProductCategorySlotBlockConditionForm();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Formatter\ProductLabelFormatterInterface
-     */
     public function createProductLabelFormatter(): ProductLabelFormatterInterface
     {
         return new ProductLabelFormatter();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\DataProvider\ProductCategorySlotBlockDataProviderInterface
-     */
     public function createProductCategorySlotBlockDataProvider(): ProductCategorySlotBlockDataProviderInterface
     {
         return new ProductCategorySlotBlockDataProvider(
@@ -58,9 +49,6 @@ class CmsSlotBlockProductCategoryGuiCommunicationFactory extends AbstractCommuni
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Reader\Product\ProductReaderInterface
-     */
     public function createCmsSlotBlockProductCategoryGuiProductReader(): ProductReaderInterface
     {
         return new ProductReader(
@@ -70,9 +58,6 @@ class CmsSlotBlockProductCategoryGuiCommunicationFactory extends AbstractCommuni
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Reader\Category\CategoryReaderInterface
-     */
     public function createCmsSlotBlockProductCategoryGuiCategoryReader(): CategoryReaderInterface
     {
         return new CategoryReader(
@@ -81,49 +66,31 @@ class CmsSlotBlockProductCategoryGuiCommunicationFactory extends AbstractCommuni
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Form\Validator\Constraints\ProductCategoryConditionConstraint
-     */
     public function createProductCategoryConditionsConstraint(): ProductCategoryConditionConstraint
     {
         return new ProductCategoryConditionConstraint();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToProductFacadeInterface
-     */
     public function getProductFacade(): CmsSlotBlockProductCategoryGuiToProductFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::FACADE_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToCategoryFacadeInterface
-     */
     public function getCategoryFacade(): CmsSlotBlockProductCategoryGuiToCategoryFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::FACADE_CATEGORY);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): CmsSlotBlockProductCategoryGuiToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToTranslatorFacadeInterface
-     */
     public function getTranslatorFacade(): CmsSlotBlockProductCategoryGuiToTranslatorFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::FACADE_TRANSLATOR);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Service\CmsSlotBlockProductCategoryGuiToUtilEncodingInterface
-     */
     public function getUtilEncoding(): CmsSlotBlockProductCategoryGuiToUtilEncodingInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryGuiDependencyProvider::SERVICE_UTIL_ENCODING);

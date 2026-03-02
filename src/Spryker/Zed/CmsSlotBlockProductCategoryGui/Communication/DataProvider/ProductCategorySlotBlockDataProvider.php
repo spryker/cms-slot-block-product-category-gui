@@ -39,11 +39,6 @@ class ProductCategorySlotBlockDataProvider implements ProductCategorySlotBlockDa
      */
     protected $translatorFacade;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Reader\Product\ProductReaderInterface $cmsSlotBlockProductCategoryGuiProductReader
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Reader\Category\CategoryReaderInterface $cmsSlotBlockProductCategoryGuiCategoryReader
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToTranslatorFacadeInterface $translatorFacade
-     */
     public function __construct(
         ProductReaderInterface $cmsSlotBlockProductCategoryGuiProductReader,
         CategoryReaderInterface $cmsSlotBlockProductCategoryGuiCategoryReader,
@@ -70,9 +65,6 @@ class ProductCategorySlotBlockDataProvider implements ProductCategorySlotBlockDa
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getAllOptions(): array
     {
         return [

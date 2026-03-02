@@ -16,11 +16,5 @@ interface ProductReaderInterface
      */
     public function getProductAbstracts(?array $productAbstractIds = []): array;
 
-    /**
-     * @param string $suggestion
-     * @param int $page
-     *
-     * @return array
-     */
     public function getProductAbstractPaginatedAutocompleteData(string $suggestion, int $page): array;
 }

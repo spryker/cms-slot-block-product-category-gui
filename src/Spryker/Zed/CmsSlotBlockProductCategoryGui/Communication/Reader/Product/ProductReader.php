@@ -60,11 +60,6 @@ class ProductReader implements ProductReaderInterface
      */
     protected $productLabelFormatter;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Persistence\CmsSlotBlockProductCategoryGuiRepositoryInterface $cmsSlotBlockProductCategoryGuiRepository
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Dependency\Facade\CmsSlotBlockProductCategoryGuiToProductFacadeInterface $productFacade
-     * @param \Spryker\Zed\CmsSlotBlockProductCategoryGui\Communication\Formatter\ProductLabelFormatterInterface $productLabelFormatter
-     */
     public function __construct(
         CmsSlotBlockProductCategoryGuiRepositoryInterface $cmsSlotBlockProductCategoryGuiRepository,
         CmsSlotBlockProductCategoryGuiToProductFacadeInterface $productFacade,
@@ -88,12 +83,6 @@ class ProductReader implements ProductReaderInterface
         return $this->mapProductAbstractTransfersToArray($productAbstractTransfers);
     }
 
-    /**
-     * @param string $suggestion
-     * @param int $page
-     *
-     * @return array
-     */
     public function getProductAbstractPaginatedAutocompleteData(string $suggestion, int $page): array
     {
         $paginationTransfer = $this->getPaginationTransfer($page);
@@ -154,11 +143,6 @@ class ProductReader implements ProductReaderInterface
         return $autocompleteData;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return array
-     */
     protected function getPaginationData(PaginationTransfer $paginationTransfer): array
     {
         $hasMoreResults = $paginationTransfer->getLastPage() > 0 &&
@@ -169,11 +153,6 @@ class ProductReader implements ProductReaderInterface
         ];
     }
 
-    /**
-     * @param int $page
-     *
-     * @return \Generated\Shared\Transfer\PaginationTransfer
-     */
     protected function getPaginationTransfer(int $page): PaginationTransfer
     {
         return (new PaginationTransfer())
